@@ -229,6 +229,51 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [FastAPI](https://fastapi.tiangolo.com/) for the backend framework
 - [.NET WPF](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/) for the desktop UI
 
+## 📚 Documentation
+
+- **[QUICKSTART.md](QUICKSTART.md)** - Quick start guide for new users
+- **[INSTALLATION.md](INSTALLATION.md)** - Detailed installation instructions
+- **[API_TESTING.md](API_TESTING.md)** - API testing guide
+- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Complete project overview
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guidelines for contributors
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history and changes
+- **[SECURITY.md](SECURITY.md)** - Security policy and best practices
+
+## 🧪 Testing
+
+### Run Backend Tests
+
+```bash
+# Start backend first, then run:
+.\run-tests.bat
+```
+
+Or manually:
+```bash
+cd backend
+pytest test_api.py -v
+```
+
+### Test Coverage
+
+- Health endpoint tests
+- Paraphrase endpoint tests
+- Validation tests
+- Performance tests
+- Error handling tests
+
+## 🔒 Security
+
+This application prioritizes your privacy:
+
+- ✅ 100% local processing
+- ✅ No cloud services
+- ✅ No telemetry or tracking
+- ✅ No account required
+- ✅ Open source for transparency
+
+See [SECURITY.md](SECURITY.md) for detailed security information.
+
 ## 🔮 Roadmap
 
 See [roadmap.md](roadmap.md) for detailed development plans and future features.
@@ -239,6 +284,7 @@ For issues, questions, or suggestions:
 - Open an issue on GitHub
 - Check existing issues for solutions
 - Review the troubleshooting section
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines
 
 ---
 

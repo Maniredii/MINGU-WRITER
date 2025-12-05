@@ -1,0 +1,30 @@
+{
+  "api": {
+    "baseUrl": "http://localhost:8000",
+    "timeout": 30,
+    "endpoints": {
+      "paraphrase": "/paraphrase",
+      "health": "/health"
+    }
+  },
+  "hotkey": {
+    "modifiers": ["Control", "Alt"],
+    "key": "P",
+    "description": "Ctrl+Alt+P to capture and paraphrase"
+  },
+  "ui": {
+    "defaultStrength": 50,
+    "theme": "light",
+    "windowWidth": 1000,
+    "windowHeight": 700
+  },
+  "clipboard": {
+    "captureTimeout": 1500,
+    "retryDelay": 100
+  },
+  "model": {
+    "name": "ramsrigouthamg/t5_paraphraser",
+    "maxLength": 512,
+    "defaultBeams": 4
+  }
+}
