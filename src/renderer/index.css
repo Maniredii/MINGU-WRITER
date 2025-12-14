@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-50 to-blue-50 text-slate-900 font-sans;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-lg;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-lg font-medium shadow-lg hover:shadow-glow hover:from-primary-700 hover:to-primary-600 transition-all duration-200 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-white text-slate-700 rounded-lg font-medium border border-slate-300 hover:bg-slate-50 hover:border-slate-400 transition-all duration-200 active:scale-95;
+  }
+
+  .toolbar-btn {
+    @apply p-2 rounded-lg hover:bg-slate-200 active:bg-slate-300 transition-colors duration-150 text-slate-700 hover:text-slate-900;
+  }
+
+  .toolbar-btn.active {
+    @apply bg-primary-100 text-primary-700 hover:bg-primary-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-soft border border-slate-200;
+  }
+
+  .input-field {
+    @apply px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all;
+  }
+}
+
+/* Quill Editor Customization */
+.ql-container {
+  @apply border-none;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.ql-editor {
+  @apply min-h-full p-8;
+}
+
+.ql-editor h1 {
+  @apply text-4xl font-bold mb-4 mt-6;
+}
+
+.ql-editor h2 {
+  @apply text-3xl font-bold mb-3 mt-5;
+}
+
+.ql-editor h3 {
+  @apply text-2xl font-semibold mb-2 mt-4;
+}
+
+.ql-editor h4 {
+  @apply text-xl font-semibold mb-2 mt-3;
+}
+
+.ql-editor p {
+  @apply mb-3;
+}
+
+.ql-editor ul,
+.ql-editor ol {
+  @apply mb-3 pl-6;
+}
+
+.ql-editor img {
+  @apply max-w-full h-auto my-4 rounded-lg shadow-md;
+}
+
+/* Preview Styling */
+.preview-content {
+  @apply p-8 bg-white;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 8.5in;
+  margin: 0 auto;
+}
+
+.preview-content h1 {
+  @apply text-4xl font-bold mb-4 mt-6 text-slate-900;
+}
+
+.preview-content h2 {
+  @apply text-3xl font-bold mb-3 mt-5 text-slate-800;
+}
+
+.preview-content h3 {
+  @apply text-2xl font-semibold mb-2 mt-4 text-slate-800;
+}
+
+.preview-content h4 {
+  @apply text-xl font-semibold mb-2 mt-3 text-slate-700;
+}
+
+.preview-content p {
+  @apply mb-3 text-slate-700;
+}
+
+.preview-content ul,
+.preview-content ol {
+  @apply mb-3 pl-6 text-slate-700;
+}
+
+.preview-content img {
+  @apply max-w-full h-auto my-4 rounded-lg shadow-md;
+}
+
+.preview-content strong {
+  @apply font-semibold text-slate-900;
+}
+
+.preview-content em {
+  @apply italic;
+}
+
+.preview-content u {
+  @apply underline;
+}
