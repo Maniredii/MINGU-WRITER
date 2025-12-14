@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  
   body {
     @apply bg-gradient-to-br from-slate-50 to-blue-50 text-slate-900 font-sans;
     margin: 0;
@@ -64,10 +60,19 @@
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.6;
+  height: 100% !important;
+  overflow-y: auto !important;
+}
+
+.ql-toolbar {
+  border: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
 }
 
 .ql-editor {
-  @apply min-h-full p-8;
+  @apply p-8;
+  min-height: 100%;
+  max-height: none !important;
 }
 
 .ql-editor h1 {

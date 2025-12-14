@@ -1,7 +1,6 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useMemo, useCallback } from 'react'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
-import FormattingToolbar from './FormattingToolbar'
 
 interface EditorProps {
     content: string
@@ -12,7 +11,7 @@ interface EditorProps {
 function Editor({ content, onContentChange, onImageAdd }: EditorProps) {
     const quillRef = useRef<ReactQuill>(null)
 
-    const handleImageInsert = async () => {
+    const handleImageInsert = useCallback(async () => {
         try {
             const filePath = await window.api.openFileDialog()
             if (filePath) {
@@ -43,29 +42,34 @@ function Editor({ content, onContentChange, onImageAdd }: EditorProps) {
         } catch (error) {
             alert(`Error inserting image: ${error instanceof Error ? error.message : 'Unknown error'}`)
         }
-    }
+    }, [onImageAdd])
 
-    const modules = {
+    // Use useMemo to prevent modules from being recreated on every render
+    const modules = useMemo(() => ({
         toolbar: {
-            container: '#toolbar',
+            container: [
+                [{ 'header': [1, 2, 3, 4, false] }],
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                ['image'],
+                ['clean']
+            ],
             handlers: {
                 image: handleImageInsert
             }
         }
-    }
+    }), [handleImageInsert])
 
     const formats = [
         'header',
         'bold', 'italic', 'underline', 'strike',
         'list', 'bullet',
-        'image',
-        'clean'
+        'image'
     ]
 
     return (
         <div className="h-full flex flex-col bg-white">
-            <FormattingToolbar />
-            <div className="flex-1 overflow-auto">
+            <div className="flex-1 overflow-hidden">
                 <ReactQuill
                     ref={quillRef}
                     theme="snow"
@@ -74,7 +78,7 @@ function Editor({ content, onContentChange, onImageAdd }: EditorProps) {
                     modules={modules}
                     formats={formats}
                     placeholder="Paste your content here or start typing..."
-                    className="h-full"
+                    style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                 />
             </div>
         </div>
